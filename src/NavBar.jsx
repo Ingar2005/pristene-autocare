@@ -1,15 +1,15 @@
-import viteLogo from "/vite.svg";
-
+import logo from "./assets/logo.jpeg"
 export default function NavBar(){
     return(
         <nav>
-            <img src={viteLogo} alt="Logo"/>
+            <img src={logo} alt="Logo"/>
+            <h1>Pristine Auto Care</h1>
             <ul>
-                <h1>Pristine Autocare</h1>
-                <h1>Detailing Packages</h1>
-                <h1>Contact</h1>
-                <h1>Motorbike Packages</h1>
-                <h1>Quick Quote</h1>
+                <h2>Pristine Autocare</h2>
+                <h2>Detailing Packages</h2>
+                <h2>Contact</h2>
+                <h2>Motorbike Packages</h2>
+                <h2>Quick Quote</h2>
             </ul>
         </nav>
     )
