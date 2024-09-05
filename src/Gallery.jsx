@@ -4,7 +4,7 @@ export default function Gallery({images}) {
    
     return (
 
-    <ImageGallery items={images} />
+    <ImageGallery autoPlay slideInterval={10000}  items={images} />
 
    )
 }

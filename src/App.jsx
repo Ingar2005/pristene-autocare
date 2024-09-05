@@ -13,7 +13,7 @@ import four from "./assets/IMG_3572.jpeg";
 import five from "./assets/IMG_3681.jpeg";
 
 function App() {
-  const featurableWidgetId= "#api key"
+  const featurableWidgetId= "ab151222-7f6e-489a-b45a-63b8500fb10a"
   const text = "hello world"
   const foundedText = "founig text"
   const whatWeDo = "we excel"
@@ -23,13 +23,13 @@ function App() {
     <>
 
     <NavBar />
-    <Gallery images={[{origin:one}]}/>
+    <Gallery images={[{original:one},{original:three},{original:four},{original:two},{original:five}]}/>
      <div id={"reasons"}>
         <h2>Why Us?</h2>
         <p>{text}</p>
       </div>
       <div id='reviews'>
-      <ReactGoogleReviews theme="dark" layout="carousel" featurableId={featurableWidgetId} />
+      <ReactGoogleReviews carouselSpeed={10000} theme="dark" layout="carousel" featurableId={featurableWidgetId} />
       </div>
       <div id={"founded"}>
         <p>{foundedText}</p>
