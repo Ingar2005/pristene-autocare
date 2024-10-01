@@ -30,8 +30,12 @@ function App() {
       behavior:"smooth"
     })
   }
-  return (
+  return (<>
+  <head>
+    <script src="https://kit.fontawesome.com/b28ea738ca.js" crossorigin="anonymous"></script>
+  </head>
     <body className="flex flex-col">
+
     {/* <ContactForm></ContactForm> */}
 
     <NavBar scrollToSection={scrollToSection} packages={packages} />
@@ -62,6 +66,7 @@ function App() {
       </div> */}
     <Footer/>
     </body>
+    </>
   )
 }
 
