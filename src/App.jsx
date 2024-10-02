@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import logo from "./assets/logo.jpeg"
 import './App.css'
 import NavBar from "./NavBar.jsx";
@@ -13,13 +13,19 @@ import four from "./assets/IMG_3572.jpeg";
 import five from "./assets/IMG_3681.jpeg";
 import ContactForm from './ContactForm.jsx';
 import rari2 from "./assets/rari2.jpeg";
+import Reasons from './Reasons.jsx';
 
 function App() {
   const featurableWidgetId= "ab151222-7f6e-489a-b45a-63b8500fb10a"
-  const foundedText = "Founded in 2023, Pristine Auto Care is a dynamic and innovative car detailing company that offers both mobile services and convenient site locations around Stoneygate off London Road and in Evington off Uppingham Road. We provide a comprehensive range of detailing services, including exterior 3-step washes, iron decontamination, clay bar treatments, machine and hand polishing, interior decontamination, steam cleaning, leather care and restoration, deep seat cleaning, ceramic coating, headlight restoration, and more.<br /> At Pristine Auto Care, we cater to all vehicle owners who value the importance of maintaining their cars health and appearance. We believe that your vehicle is a reflection of you, and we are dedicated to ensuring it stays in top condition. Our commitment to delivering excellent service at competitive prices, combined with our attention to detail, sets us apart in the industry. <br />As a company founded by two young entrepreneurs, we are constantly seeking innovative ways to enhance our services and stand out in the market we work as a pair too help multitask and detail your car at a much more reasonable time. Our mission is to provide exceptional care for your car, making sure every detail counts. Trust Pristine Auto Care to keep your vehicle looking its best."
-  const  whyUsText= "At PristineAutoCare, we combine knowledge and expertise with the latest detailing techniques to deliver exceptional care for your vehicle. As skilled professionals we use top-quality products and high quality equipment to ensure every detail is meticulously attended to, leaving your car spotless and well-protected. We're committed to your satisfaction and take pride in exceeding your expectations with every service."
   const whatWeDo = "we excel"
   const [product, setProduct] = useState([{name:"Premium Detail",link:"https://google.com"},{name:"Paint Correction",link:"https://google.com"},{name:"motorbike Detail",link:"https://google.com"}])
+
+  useEffect(()=>{
+    const script = document.createElement('script')
+    script.src = "https://static.elfsight.com/platform/platform.js"
+    script.async = true
+    document.body.appendChild(script)
+  },[])
 
   const packages = useRef(null)
   const contact = useRef(null)
@@ -32,29 +38,20 @@ function App() {
   }
   return (<>
   <head>
-    <script src="https://kit.fontawesome.com/b28ea738ca.js" crossorigin="anonymous"></script>
   </head>
-    <body className="flex flex-col">
+    <body className="">
+    <NavBar scrollToSection={scrollToSection} packages={packages} />
+    <div className="elfsight-app-fea6e5d6-19c0-4472-b4e9-aa4c88394e88" data-elfsight-app-lazy></div>
 
+    <div className="flex flex-col bg-white ">
     {/* <ContactForm></ContactForm> */}
 
-    <NavBar scrollToSection={scrollToSection} packages={packages} />
-    {/* <Gallery images={[{original:one},{original:three},{original:four},{original:two},{original:five}]}/>
-    <div className="reasons" id={"reasons"}>
-      <div>
-        <h2>Why Us?</h2>
-        <p>{whyUsText}</p>
-      </div>
-        <div> <img src={one} alt={"rari"}></img>
-      </div>
-    </div>
-      <div id='reviews'>
+     {/*<Gallery images={[{original:one},{original:three},{original:four},{original:two},{original:five}]}/>*/}
+      <Reasons />
+      {/*<div id='reviews'>
       <ReactGoogleReviews carouselSpeed={10000} layout="carousel" featurableId={featurableWidgetId} />
       </div>
-      <div id={"founded"}  >
-        <p dangerouslySetInnerHTML={{ __html: foundedText }}></p>
-        <img src={logo} alt={"car image"} />
-      </div>
+
       <div ref={packages} id={"whatWeDo"}>
         <h2>What We Do</h2>
         <p>{whatWeDo}</p>
@@ -64,7 +61,9 @@ function App() {
           </tbody>
         </table>
       </div> */}
+    </div>
     <Footer/>
+
     </body>
     </>
   )
