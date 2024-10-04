@@ -1,5 +1,6 @@
+import { ReactGoogleReviews } from "react-google-reviews";
 
-export default function Footer(){
+export default function Footer({featurableWidgetId}){
 
     return(
     <div className="flex  justify-around  bg-black px-7 py-5 ">
@@ -8,9 +9,13 @@ export default function Footer(){
     <h2 className="text-white font-bold text-xl"> Adress: <br/></h2>
     <h3 className="text-white"> Pristine Auto Care Leicester <br/>16 Sherwood St <br/> Leicester <br/> LE5 4GR <br/>  United Kingdom</h3>
     </div></a>
-    <div>
+    <div className="mr-8">
         <h2 className="text-white font-bold text-xl">Contact Us:</h2>
         <h1 className="text-white">07798867651</h1>
+    </div>
+    <div>
+    <ReactGoogleReviews carouselSpeed={10000} layout="badge" featurableId={featurableWidgetId} />
+
     </div>
     </div>
     )

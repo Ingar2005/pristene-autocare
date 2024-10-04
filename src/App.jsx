@@ -12,58 +12,80 @@ import three from "./assets/IMG_2635.jpeg";
 import four from "./assets/IMG_3572.jpeg";
 import five from "./assets/IMG_3681.jpeg";
 import ContactForm from './ContactForm.jsx';
-import rari2 from "./assets/rari2.jpeg";
 import Reasons from './Reasons.jsx';
+import Packages from './Packages.jsx';
+import Mpackages from './Mpackages.jsx';
 
 function App() {
   const featurableWidgetId= "ab151222-7f6e-489a-b45a-63b8500fb10a"
   const whatWeDo = "we excel"
   const [product, setProduct] = useState([{name:"Premium Detail",link:"https://google.com"},{name:"Paint Correction",link:"https://google.com"},{name:"motorbike Detail",link:"https://google.com"}])
 
+  const [home,setHome] = useState(true)
+  const [carPackage,setCarPackage] = useState(false)
+  const [contacts,setContacts] = useState(false)
+  const [motorbikePackage,setMotorbikePackage] = useState(false)
+
   useEffect(()=>{
     const script = document.createElement('script')
     script.src = "https://static.elfsight.com/platform/platform.js"
     script.async = true
     document.body.appendChild(script)
+
+
   },[])
 
   const packages = useRef(null)
   const contact = useRef(null)
 
-  const scrollToSection = (elementRef) =>{
-    window.scrollTo({
-      top: elementRef.current.offsetTop,
-      behavior:"smooth"
-    })
+  const onHomeClick = () =>{
+    setCarPackage(false)
+    setContacts(false)
+    setMotorbikePackage(false)
+    setHome(true)
+
   }
+
+  const onCarPackageClick = () =>{
+    setContacts(false)
+    setMotorbikePackage(false)
+    setHome(false)
+    setCarPackage(true)
+
+
+  }
+  const onMotorPackageClick = () =>{
+    setCarPackage(false)
+    setHome(false)
+    setContacts(false)
+    setMotorbikePackage(true)
+
+  }
+
   return (<>
   <head>
   </head>
     <body className="">
-    <NavBar scrollToSection={scrollToSection} packages={packages} />
-    <div className="elfsight-app-fea6e5d6-19c0-4472-b4e9-aa4c88394e88" data-elfsight-app-lazy></div>
 
+
+    <NavBar onHomeClick={onHomeClick} onCarPackageClick={onCarPackageClick} onMotorPackageClick={onMotorPackageClick}  packages={packages} />
+
+    {home && <><div className="elfsight-app-fea6e5d6-19c0-4472-b4e9-aa4c88394e88" data-elfsight-app-lazy></div>
     <div className="flex flex-col bg-white ">
-    {/* <ContactForm></ContactForm> */}
-
-     {/*<Gallery images={[{original:one},{original:three},{original:four},{original:two},{original:five}]}/>*/}
+     <Gallery  images={[{original:one},{original:three},{original:four},{original:two},{original:five}]}/>
       <Reasons />
-      {/*<div id='reviews'>
+
+      <div id='reviews'>
       <ReactGoogleReviews carouselSpeed={10000} layout="carousel" featurableId={featurableWidgetId} />
       </div>
+      <iframe src="https://www.juicer.io/api/feeds/pristineautocareuk/iframe?per=15" frameBorder="0" width="1000" height="1000"  className="overflow-visible"     ></iframe>
 
-      <div ref={packages} id={"whatWeDo"}>
-        <h2>What We Do</h2>
-        <p>{whatWeDo}</p>
-        <table>
-          <tbody>
-          {product.map((item,index) => {if(index %2 === 0){return(<a href={item.link}><td>{item.name}</td></a>)} else{return (<><a href={item.link}><td>{item.name}</td></a><tr></tr></>)}})}
-          </tbody>
-        </table>
-      </div> */}
-    </div>
-    <Footer/>
+    </div></>}
 
+      {carPackage && <Packages />}
+      {motorbikePackage && <Mpackages />}
+
+    <Footer featurableWidgetId={featurableWidgetId}/>
     </body>
     </>
   )
