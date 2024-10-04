@@ -1,22 +1,14 @@
 import logo from "./assets/logo.jpeg"
-export default function NavBar({scrollToSection,packages}){
-    return(<>
-        <style>{
-           `.navElement{display:flex;flex-Direction:row;justify-content:centre;align-Items:center;}`
-            }
-        </style>
-        <nav style={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
-            <div style={{display:"flex",flexDirection:"row",justifyContent:"end"}}>
-            <img style={{height:"15vh"}} src={logo} alt="Logo"/>
-            </div>
-            <h1 style={{display:"flex", flexDirection:"row",justifyContent:"centre",alignItems:"center"}}>Pristine Auto Care</h1>
+export default function NavBar({onHomeClick,packages,onCarPackageClick, onMotorPackageClick}){
 
-            <ul style={{display:"flex", flexDirection:"row",justifyContent:"space-between",width:"70%"}}>
-                <h2 className="navElement" onClick={()=>scrollToSection(packages)}>Detailing Packages</h2>
-                <h2 className="navElement">Contact</h2>
-                <h2 className="navElement" >Motorbike Packages</h2>
-                <h2 className="navElement">Quick Quote</h2>
-            </ul>
+    return(<>
+
+        <nav className="flex flex-row justify-between h-32  place-items-center bg-black	 ">
+            <div className="flex-1  flex justify-center"  ><a onClick={()=>{onHomeClick()}}><img  className="h-28 hover:cursor-pointer"  src={logo} alt="Logo"/></a></div>
+                <h2 className="flex-1 flex justify-center text-white hover:text-lg hover:cursor-pointer " onClick={()=>{onCarPackageClick()}}>Detailing Packages</h2>
+                <h2 className="flex-1 flex justify-center text-white hover:text-lg hover:cursor-pointer">Contact</h2>
+                <h2 className="flex-1 flex justify-center text-white hover:text-lg hover:cursor-pointer" onClick={()=>{onMotorPackageClick()}} >Motorbike Packages</h2>
+                <h2 className="flex-1 flex justify-center text-white hover:text-lg hover:cursor-pointer">Quick Quote</h2>
         </nav>
         </>
     )

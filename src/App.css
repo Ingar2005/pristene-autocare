@@ -1,5 +1,5 @@
-.navElement{display:flex;
-    flex-Direction:row;
-    align-Items:center;
-}
+iframe {
+  display:block;
+  margin:0 auto;
 
+}
