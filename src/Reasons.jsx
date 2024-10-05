@@ -1,6 +1,3 @@
-import one from "./assets/9D77DBAF-0B1A-49E3-923C-156F3700506F.jpeg";
-import logo from "./assets/logo.jpeg"
-import { InstagramEmbed } from 'react-social-media-embed';
 
 export default function Content(){
   const  whyUsText= "At PristineAutoCare, we combine knowledge and expertise with the latest detailing techniques to deliver exceptional care for your vehicle. As skilled professionals we use top-quality products and high quality equipment to ensure every detail is meticulously attended to, leaving your car spotless and well-protected. We're committed to your satisfaction and take pride in exceeding your expectations with every service."
