@@ -23,7 +23,6 @@ function App() {
 
   const [home,setHome] = useState(true)
   const [carPackage,setCarPackage] = useState(false)
-  const [contacts,setContacts] = useState(false)
   const [motorbikePackage,setMotorbikePackage] = useState(false)
 
   useEffect(()=>{
@@ -40,14 +39,12 @@ function App() {
 
   const onHomeClick = () =>{
     setCarPackage(false)
-    setContacts(false)
     setMotorbikePackage(false)
     setHome(true)
 
   }
 
   const onCarPackageClick = () =>{
-    setContacts(false)
     setMotorbikePackage(false)
     setHome(false)
     setCarPackage(true)
@@ -57,7 +54,6 @@ function App() {
   const onMotorPackageClick = () =>{
     setCarPackage(false)
     setHome(false)
-    setContacts(false)
     setMotorbikePackage(true)
 
   }
@@ -68,10 +64,10 @@ function App() {
     <body className="">
 
 
-    <NavBar onHomeClick={onHomeClick} onCarPackageClick={onCarPackageClick} onMotorPackageClick={onMotorPackageClick}  packages={packages} />
+    <NavBar className=" " onHomeClick={onHomeClick} onCarPackageClick={onCarPackageClick} onMotorPackageClick={onMotorPackageClick}  packages={packages} />
 
-    {home && <><div className="elfsight-app-fea6e5d6-19c0-4472-b4e9-aa4c88394e88" data-elfsight-app-lazy></div>
-    <div className="flex flex-col bg-white ">
+    {home && <><div className=" elfsight-app-fea6e5d6-19c0-4472-b4e9-aa4c88394e88" data-elfsight-app-lazy></div>
+    <div className="flex flex-col bg-white pt-24 ">
      <Gallery  images={[{original:one},{original:three},{original:four},{original:two},{original:five}]}/>
       <Reasons />
 
