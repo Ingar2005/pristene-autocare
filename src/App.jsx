@@ -77,8 +77,11 @@ function App() {
       <Reasons />
       <div id='reviews'>
       <ReactGoogleReviews carouselSpeed={10000} layout="carousel" featurableId={featurableWidgetId} />
-      </div>
-    <div className="flex flex-row flex-wrap ">
+      </div >
+      <div className="h-9" ></div>
+      <div className="h-9" ></div>
+
+    <div className="flex flex-row justify-around flex-wrap ">
     <Post url="https://www.instagram.com/p/CwapRozMvuS" />
     <Post url="https://www.instagram.com/p/CvU2MB_MFFr" />
     <Post url="https://www.instagram.com/p/C-INJs_Caym" />
