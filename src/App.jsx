@@ -17,6 +17,7 @@ import Reasons from './Reasons.jsx';
 import Packages from './Packages.jsx';
 import Mpackages from './Mpackages.jsx';
 import rari2 from "./assets/9dba0398-a29e-42f3-973c-26240e712851.jpg";
+import Post from './Post.jsx';
 
 function App() {
   const featurableWidgetId= "ab151222-7f6e-489a-b45a-63b8500fb10a"
@@ -68,16 +69,25 @@ function App() {
 
     <NavBar className=" " onHomeClick={onHomeClick} onCarPackageClick={onCarPackageClick} onMotorPackageClick={onMotorPackageClick}  packages={packages} />
 
-    {home && <><div className=" elfsight-app-fea6e5d6-19c0-4472-b4e9-aa4c88394e88" data-elfsight-app-lazy></div>
-      <Gallery className="w-screen" images={[{original:trial},{original:rari2},{original:one},{original:three},{original:four},{original:two},{original:five}]}/>
+    {home &&
+
+    <><div className=" elfsight-app-fea6e5d6-19c0-4472-b4e9-aa4c88394e88" data-elfsight-app-lazy></div>
     <div className="flex flex-col bg-white pt-24 ">
+    <Gallery className="w-screen" images={[{original:trial},{original:rari2},{original:one},{original:three},{original:four},{original:two},{original:five}]}/>
       <Reasons />
       <div id='reviews'>
       <ReactGoogleReviews carouselSpeed={10000} layout="carousel" featurableId={featurableWidgetId} />
       </div>
-      <iframe src="https://www.juicer.io/api/feeds/pristineautocareuk/iframe?per=15" frameBorder="0" width="1000" height="1000"  className="overflow-visible"     ></iframe>
+    <div className="flex flex-row flex-wrap ">
+    <Post url="https://www.instagram.com/p/CwapRozMvuS" />
+    <Post url="https://www.instagram.com/p/CvU2MB_MFFr" />
+    <Post url="https://www.instagram.com/p/C-INJs_Caym" />
+    <Post url="https://www.instagram.com/p/C-NWvDri1vM" />
+    <Post url="https://www.instagram.com/p/C9pQLYUuNC5" />
 
-    </div></>}
+    </div>
+    </div>
+    </>}
 
       {carPackage && <Packages />}
       {motorbikePackage && <Mpackages />}
@@ -85,7 +95,8 @@ function App() {
     <Footer featurableWidgetId={featurableWidgetId}/>
     </body>
     </>
-  )
+
+    )
 }
 
 export default App

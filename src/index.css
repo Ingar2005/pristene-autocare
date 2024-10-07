@@ -5,3 +5,12 @@
 iframe{
     border: none;
 }
+iframe {
+    display:block;
+    margin:0 auto;
+
+}
+
+.HoverCard .Feedback .Footer{
+    display:none;
+  }
