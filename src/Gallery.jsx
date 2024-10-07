@@ -4,7 +4,7 @@ export default function Gallery({images}) {
 
     return (
 
-    <ImageGallery autoPlay slideInterval={10000}  items={images} originalHeigh={100} showNav={false} showFullscreenButton={false} showPlayButton={false}/>
+    <ImageGallery autoPlay useBrowserFullscreen  slideInterval={10000}  items={images} originalHeigh={100} showNav={true} showFullscreenButton={false} showPlayButton={false}/>
 
    )
 }

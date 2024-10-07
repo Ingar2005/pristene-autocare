@@ -1,11 +1,12 @@
+import one from "./assets/9D77DBAF-0B1A-49E3-923C-156F3700506F.jpeg";
 
 export default function Content(){
   const  whyUsText= "At PristineAutoCare, we combine knowledge and expertise with the latest detailing techniques to deliver exceptional care for your vehicle. As skilled professionals we use top-quality products and high quality equipment to ensure every detail is meticulously attended to, leaving your car spotless and well-protected. We're committed to your satisfaction and take pride in exceeding your expectations with every service."
   const foundedText = ""
 
   return (<>
-    <div className="grid grid-cols-4 " id={"reasons"}>
-    <div className=" place-self-center col-span-4 lg:mx-96">
+    <div className="grid grid-cols-8 lg:mb-20 grid-flow-row-dense	" id={"reasons"}>
+    <div className=" place-self-center col-span-8 md:mx-3 lg:mx-20 ">
     <div className="h-9" ></div>
       <h2 className="font-bold text-2xl tracing-wide leading-10">About Us?</h2>
       <div className="h-9" ></div>
@@ -20,6 +21,7 @@ export default function Content(){
       <hr className="h-0.5 bg-black"></hr>
       <div className="h-9" ></div>
     </div>
+
   </div>
 
 

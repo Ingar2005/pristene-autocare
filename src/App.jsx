@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import logo from "./assets/logo.jpeg"
+import trial from "./assets/temp.jpg";
 import './App.css'
 import NavBar from "./NavBar.jsx";
 import Gallery from "./Gallery.jsx";
@@ -15,6 +16,7 @@ import ContactForm from './ContactForm.jsx';
 import Reasons from './Reasons.jsx';
 import Packages from './Packages.jsx';
 import Mpackages from './Mpackages.jsx';
+import rari2 from "./assets/9dba0398-a29e-42f3-973c-26240e712851.jpg";
 
 function App() {
   const featurableWidgetId= "ab151222-7f6e-489a-b45a-63b8500fb10a"
@@ -67,10 +69,9 @@ function App() {
     <NavBar className=" " onHomeClick={onHomeClick} onCarPackageClick={onCarPackageClick} onMotorPackageClick={onMotorPackageClick}  packages={packages} />
 
     {home && <><div className=" elfsight-app-fea6e5d6-19c0-4472-b4e9-aa4c88394e88" data-elfsight-app-lazy></div>
+      <Gallery className="w-screen" images={[{original:trial},{original:rari2},{original:one},{original:three},{original:four},{original:two},{original:five}]}/>
     <div className="flex flex-col bg-white pt-24 ">
-     <Gallery  images={[{original:one},{original:three},{original:four},{original:two},{original:five}]}/>
       <Reasons />
-
       <div id='reviews'>
       <ReactGoogleReviews carouselSpeed={10000} layout="carousel" featurableId={featurableWidgetId} />
       </div>
