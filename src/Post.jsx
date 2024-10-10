@@ -1,14 +1,7 @@
 import { useEffect } from "react"
 
 export default function Post({url}){
-  useEffect(()=>{
-    const script = document.createElement('script')
-    script.src = "//www.instagram.com/embed.js"
-    script.async = true
-    document.body.appendChild(script)
 
-
-  },[])
   return <div>
 <blockquote class="instagram-media bg-white border-0 rounded-lg shadow-md mx-1 w-full max-w-md md:max-w-lg p-0">
   <div class="p-4">
