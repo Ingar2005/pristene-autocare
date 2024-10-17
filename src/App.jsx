@@ -19,6 +19,7 @@ import Mpackages from './Mpackages.jsx';
 import rari2 from "./assets/9dba0398-a29e-42f3-973c-26240e712851.jpg";
 import Post from './Post.jsx';
 
+
 function App() {
   const featurableWidgetId= "ab151222-7f6e-489a-b45a-63b8500fb10a"
   const whatWeDo = "we excel"
@@ -51,30 +52,35 @@ function App() {
   const onHomeClick = () =>{
     setCarPackage(false)
     setMotorbikePackage(false)
+
     setHome(true)
 
   }
 
   const onCarPackageClick = () =>{
     setMotorbikePackage(false)
-    setHome(false)
+setHome(false)
     setCarPackage(true)
 
 
   }
   const onMotorPackageClick = () =>{
-    setCarPackage(false)
+     setCeramicPage(false)
+
     setHome(false)
     setMotorbikePackage(true)
 
   }
+
+
+
 
   return (<>
   <head>
   </head>
     <body className="">
 
-    <NavBar className=" " onHomeClick={onHomeClick} onCarPackageClick={onCarPackageClick} onMotorPackageClick={onMotorPackageClick}  packages={packages} />
+    <NavBar className=" "  onHomeClick={onHomeClick} onCarPackageClick={onCarPackageClick} onMotorPackageClick={onMotorPackageClick}  packages={packages} />
 
     {home &&
 
@@ -101,6 +107,7 @@ function App() {
 
       {carPackage && <Packages />}
       {motorbikePackage && <Mpackages />}
+
 
     <Footer featurableWidgetId={featurableWidgetId}/>
     </body>
