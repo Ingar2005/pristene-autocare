@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import logo from "./assets/logo.jpeg"
+import Ceramic from "./Ceramic.jsx"
 import trial from "./assets/temp.jpg";
 import './App.css'
 import NavBar from "./NavBar.jsx";
@@ -28,6 +28,7 @@ function App() {
   const [home,setHome] = useState(true)
   const [carPackage,setCarPackage] = useState(false)
   const [motorbikePackage,setMotorbikePackage] = useState(false)
+  const [ceramic,setCeramic] = useState(false)
 
   useEffect(()=>{
     const script = document.createElement('script')
@@ -52,35 +53,45 @@ function App() {
   const onHomeClick = () =>{
     setCarPackage(false)
     setMotorbikePackage(false)
-
+    setCeramic(false)
     setHome(true)
 
   }
 
   const onCarPackageClick = () =>{
     setMotorbikePackage(false)
-setHome(false)
-    setCarPackage(true)
+    setHome(false)
+     setCeramic(false)
+   setCarPackage(true)
 
 
   }
   const onMotorPackageClick = () =>{
-     setCeramicPage(false)
-
+    setCeramic(false)
+    setCarPackage(false)
     setHome(false)
     setMotorbikePackage(true)
+
+  }
+  const onCeramicClick = () =>{
+    setCeramic(true)
+    setCarPackage(false)
+    setHome(false)
+    setMotorbikePackage(false)
 
   }
 
 
 
 
-  return (<>
+
+  return (
+    <>
   <head>
   </head>
     <body className="">
 
-    <NavBar className=" "  onHomeClick={onHomeClick} onCarPackageClick={onCarPackageClick} onMotorPackageClick={onMotorPackageClick}  packages={packages} />
+    <NavBar className=" "  onHomeClick={onHomeClick} onCarPackageClick={onCarPackageClick} onMotorPackageClick={onMotorPackageClick} onCeramicClick={onCeramicClick}  packages={packages} />
 
     {home &&
 
@@ -107,12 +118,11 @@ setHome(false)
 
       {carPackage && <Packages />}
       {motorbikePackage && <Mpackages />}
-
+      {ceramic && <Ceramic />}
 
     <Footer featurableWidgetId={featurableWidgetId}/>
     </body>
     </>
-
     )
 }
 
